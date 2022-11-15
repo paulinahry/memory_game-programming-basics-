@@ -133,7 +133,7 @@ const checkCards = (elem) => {
                 });
 
                 moves--;
-                playersMoves.textContent = moves;
+                // playersMoves.textContent = moves;
 
                 if(moves ===0 ){
                     playAgain.classList.add('active-playagain')
@@ -186,9 +186,4 @@ function clickPlayAgain() {
 
 
 
-/*-----------------Notes
 
-The getAttribute() method of the Element interface returns the value of a specified attribute on the element.
-
-If the given attribute does not exist, the value returned will either be null or empty string;
- */
