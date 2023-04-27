@@ -1,7 +1,5 @@
 console.log('hello');
 
-//settings
-
 //---------------------------- MY NOTES----------------------------------------------
 ////// The querySelector() method returns the first element that matches a CSS selector. // can use here getElementById as well //querySelectorAll - all
 //-----------------------------------------------------------------------------------
@@ -73,17 +71,13 @@ const createCards = ( ) => {
         card.classList = 'card';
         front.classList = 'front';
         back.classList = 'back';
+
         //adding info to card
         front.src = item.imgSrc;
+
         //adding atributte 'name' witch take the name of image
         card.setAttribute('name', item.imgName)
-        //with appendChild creating div elements 
-        /* <section id ='gameSection'>
-                <div class='card'>
-                    <img class='face'> </img>
-                    <div class='back'> </div>
-                </div>
-        </section> */
+
         gameSection.appendChild(card);// section(parent element) append new div clas='card'  
         card.appendChild(front);
         card.appendChild(back);
@@ -109,7 +103,7 @@ const checkCards = (elem) => {
     //adding new flip class ( use to check if they match)
     const flippedCards = document.querySelectorAll('.flipped')
 
-    //if two of them are flipped, ckeck of match 
+    //if two of them are flipped, check if match 
     //when click, adding a '.flipped' class and then check
     if(flippedCards.length ===2){
         if(flippedCards[0].getAttribute('name')===
@@ -133,7 +127,7 @@ const checkCards = (elem) => {
                 });
 
                 moves--;
-                // playersMoves.textContent = moves;
+                playersMoves.textContent = moves;
 
                 if(moves ===0 ){
                     playAgain.classList.add('active-playagain')
