@@ -7,7 +7,7 @@ console.log('hello');
 
 const gameSection = document.getElementById('game');
 const playersMoves = document.querySelector('span');
-const moves = 10;
+let moves = 10;
 
 //setting players movs in span 
 playersMoves.textContent = moves
@@ -94,10 +94,10 @@ const createCards = ( ) => {
 
 //--------------------------check cARDS IF THE SAME 
 const checkCards = (elem) => {
-    console.log(elem);
+    console.log(elem)
     const clickedCard = elem.target;
-    clickedCard.classList.add('flipped');
-    clickedCard.classList.add('opacity');
+    clickedCard.classList.add('flipped')
+    clickedCard.classList.add('opacity')
 
     console.log(clickedCard);
     //adding new flip class ( use to check if they match)
@@ -108,10 +108,10 @@ const checkCards = (elem) => {
     if(flippedCards.length ===2){
         if(flippedCards[0].getAttribute('name')===
             flippedCards[1].getAttribute('name')){
-                console.log("That's right!");
+                console.log("That's right!")
 
                 flippedCards.forEach(card => {
-                    card.classList.remove('flipped');
+                    card.classList.remove('flipped')
 
                     card.style.pointerEvents = 'none' //ist nicht clickbar
                    
@@ -119,15 +119,15 @@ const checkCards = (elem) => {
                 })
 
             }else {
-                console.log('Try again...');
+                console.log('Try again...')
 
                 flippedCards.forEach( card => {
-                    card.classList.remove('flipped');
+                    card.classList.remove('flipped')
                     setTimeout(()=> card.classList.remove('toggleCard'),1500)
                 });
 
-                moves--;
-                playersMoves.textContent = moves;
+                moves--
+                playersMoves.textContent = moves
 
                 if(moves ===0 ){
                     playAgain.classList.add('active-playagain')
